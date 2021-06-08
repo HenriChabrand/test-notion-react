@@ -3,7 +3,7 @@ import Head from 'next/head'
 
 import { getPageTitle, getAllPagesInSpace } from 'notion-utils'
 import { NotionAPI } from 'notion-client'
-import { NotionRenderer } from 'react-notion-x'
+import { NotionRenderer, Code, Collection, CollectionRow } from 'react-notion-x'
 
 const isDev = process.env.NODE_ENV === 'development' || !process.env.NODE_ENV
 
@@ -68,7 +68,7 @@ export default function NotionPage({ recordMap }) {
         <title>{title}</title>
       </Head>
 
-      <NotionRenderer recordMap={recordMap} fullPage={true} darkMode={false} />
+      <NotionRenderer components={{code: Code, collection: Collection, collectionRow: CollectionRow}} recordMap={recordMap} fullPage={true} darkMode={false} />
     </>
   )
 }
