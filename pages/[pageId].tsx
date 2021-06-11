@@ -7,7 +7,7 @@ import { NotionRenderer, Code, Collection, CollectionRow } from 'react-notion-x'
 
 const isDev = process.env.NODE_ENV === 'development' || !process.env.NODE_ENV
 
-const notion = new NotionAPI({authToken:'6b9cfbc0ceddd8f2e8a7a85e6ea2d76924f80ad63d5a81f9470f85e1e298aeb0ae2ba63cc8085decc46dc531867c663462c46d51359e6861d631561bd1153be27d094f3199594f00549530092fc6'})
+const notion = new NotionAPI({authToken:process.env.NOTION_TOKEN})
 
 export const getStaticProps = async (context) => {
   const pageId = context.params.pageId as string
@@ -70,7 +70,7 @@ export default function NotionPage({ recordMap }) {
         <title>{title}</title>
       </Head>
 
-      <NotionRenderer components={{code: Code, collection: Collection, collectionRow: CollectionRow}} recordMap={recordMap} fullPage={true} darkMode={false} />
+      <NotionRenderer components={{code: Code, collection: Collection, collectionRow: CollectionRow}} recordMap={recordMap} fullPage={true} darkMode={true} />
     </>
   )
 }
