@@ -10,7 +10,7 @@ const isDev = process.env.NODE_ENV === 'development' || !process.env.NODE_ENV
 const notion = new NotionAPI({authToken:process.env.NOTION_TOKEN})
 
 export const getStaticProps = async (context) => {
-  const pageId = context.params.pageId as string
+  var pageId = context.params.pageId as string
   const recordMap = await notion.getPage(pageId)
   
   const pageUrlOverid = {
