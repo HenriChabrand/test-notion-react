@@ -13,13 +13,16 @@ export const getStaticProps = async (context) => {
   var pageId = context.params.pageId as string
   const recordMap = await notion.getPage(pageId)
   
+  console.log('pageId',pageId)
   const pageUrlOverid = {
-    'notion-powered-blog':'fcf661e4196a40dc81646903b90b9027'
+    '/notion-powered-blog':'/fcf661e4196a40dc81646903b90b9027'
   }
   
   if(pageUrlOverid[pageId]){
     pageId = pageUrlOverid[pageId];
   }
+  
+  console.log('pageId – overrides',pageId)
 
   return {
     props: {
