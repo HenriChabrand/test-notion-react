@@ -48,7 +48,8 @@ export async function getStaticPaths() {
   )
 
   const paths = Object.keys(pages).map((pageId) => `/${pageId}-test-abc`)
-
+  console.log("paths",paths);
+  
   return {
     paths,
     fallback: true
@@ -67,7 +68,7 @@ export default function NotionPage({ recordMap }) {
     <>
       <Head>
         <meta name='description' content='React Notion X demo renderer.' />
-        <title>{title}</title>
+        <title>Test {title} </title>
       </Head>
 
       <NotionRenderer components={{code: Code, collection: Collection, collectionRow: CollectionRow}} recordMap={recordMap} fullPage={true} darkMode={true} />
