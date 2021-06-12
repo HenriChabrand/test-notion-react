@@ -60,7 +60,7 @@ export async function getStaticPaths() {
 
   const paths = Object.keys(pages).map((pageId) => `/${pageId}`)
   console.log("paths",paths);
-  
+  paths.push('/notion-powered-blog');
   return {
     paths,
     fallback: true
