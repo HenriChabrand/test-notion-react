@@ -12,6 +12,14 @@ const notion = new NotionAPI({authToken:process.env.NOTION_TOKEN})
 export const getStaticProps = async (context) => {
   const pageId = context.params.pageId as string
   const recordMap = await notion.getPage(pageId)
+  
+  const pageUrlOverid = {
+    'notion-powered-blog':'fcf661e4196a40dc81646903b90b9027'
+  }
+  
+  if(pageUrlOverid[pageId]){
+    pageId = pageUrlOverid[pageId];
+  }
 
   return {
     props: {
@@ -47,7 +55,7 @@ export async function getStaticPaths() {
     }
   )
 
-  const paths = Object.keys(pages).map((pageId, i) => '/path-a') // `/${pageId}-test-abc`
+  const paths = Object.keys(pages).map((pageId) => `/${pageId}`)
   console.log("paths",paths);
   
   return {
