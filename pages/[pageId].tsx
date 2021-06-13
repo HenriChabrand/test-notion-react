@@ -42,7 +42,7 @@ export async function getStaticPaths() {
 
 
 
-  const rootNotionPageId = 'd694391183b84f7abde2f8b6893bd087'
+  const rootNotionPageId = '8573f85704334e17839a33fc61dad200'
   const rootNotionSpaceId = '36f58d27-8500-4e83-93bc-5d977da4d753'
 
   // This crawls all public pages starting from the given root page in order
