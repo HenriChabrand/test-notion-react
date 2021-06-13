@@ -77,11 +77,11 @@ export default function NotionPage({ recordMap }) {
   return (
     <>
       <Head>
-        <meta name='description' content='React Notion X demo renderer.' />
-        <title>Test {title} </title>
+        <meta name='description' content='Tricks and Tips for Product freelancer' />
+        <title>{title}</title>
       </Head>
 
-      <NotionRenderer components={{code: Code, collection: Collection, collectionRow: CollectionRow}} recordMap={recordMap} fullPage={true} darkMode={true} />
+      <NotionRenderer components={{code: Code, collection: Collection, collectionRow: CollectionRow}} recordMap={recordMap} fullPage={true} darkMode={false} />
     </>
   )
 }
